@@ -1,0 +1,44 @@
+{
+  "migrations": [
+    {
+      "prefix": "ea",
+      "to_shard": 2
+    },
+    {
+      "prefix": "32",
+      "to_shard": 2
+    },
+    {
+      "prefix": "9e",
+      "to_shard": 2
+    },
+    {
+      "prefix": "fd",
+      "to_shard": 2
+    },
+    {
+      "prefix": "b3",
+      "to_shard": 2
+    },
+    {
+      "prefix": "26",
+      "to_shard": 2
+    },
+    {
+      "prefix": "0e",
+      "to_shard": 2
+    },
+    {
+      "prefix": "49",
+      "to_shard": 2
+    },
+    {
+      "prefix": "92",
+      "to_shard": 2
+    },
+    {
+      "prefix": "83",
+      "to_shard": 2
+    }
+  ]
+}

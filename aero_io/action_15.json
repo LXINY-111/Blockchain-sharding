@@ -1,0 +1,68 @@
+{
+  "migrations": [
+    {
+      "prefix": "52",
+      "to_shard": 2
+    },
+    {
+      "prefix": "40",
+      "to_shard": 2
+    },
+    {
+      "prefix": "32",
+      "to_shard": 0
+    },
+    {
+      "prefix": "68",
+      "to_shard": 2
+    },
+    {
+      "prefix": "85",
+      "to_shard": 2
+    },
+    {
+      "prefix": "3d",
+      "to_shard": 2
+    },
+    {
+      "prefix": "7d",
+      "to_shard": 2
+    },
+    {
+      "prefix": "f8",
+      "to_shard": 2
+    },
+    {
+      "prefix": "e2",
+      "to_shard": 2
+    },
+    {
+      "prefix": "35",
+      "to_shard": 2
+    },
+    {
+      "prefix": "7c",
+      "to_shard": 2
+    },
+    {
+      "prefix": "9b",
+      "to_shard": 2
+    },
+    {
+      "prefix": "a5",
+      "to_shard": 2
+    },
+    {
+      "prefix": "a6",
+      "to_shard": 2
+    },
+    {
+      "prefix": "d2",
+      "to_shard": 2
+    },
+    {
+      "prefix": "ce",
+      "to_shard": 2
+    }
+  ]
+}
