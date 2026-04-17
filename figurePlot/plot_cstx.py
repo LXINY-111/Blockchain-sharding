@@ -1,83 +1,76 @@
+import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-import csv
 import os
 
-# 配置 CSV 文件路径 
-file_path = '../result/supervisor_measureOutput/CrossTransaction_ratio.csv'
+# 1. 精准定位文件
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(current_dir)
+file_path = os.path.join(root_dir, 'expTest', 'result', 'supervisor_measureOutput', 'Tx_number.csv')
 
-# 路径防错处理
 if not os.path.exists(file_path):
-    file_path_alt = '../expTest/result/supervisor_measureOutput/CrossTransaction_ratio.csv'
-    if os.path.exists(file_path_alt):
-        file_path = file_path_alt
-    else:
-        print(f"找不到文件，请检查路径是否正确！")
-        exit()
+    print(f"❌ 找不到文件：{file_path}")
+    exit()
 
-data = []
-# 读取 CSV 数据
-with open(file_path, 'r') as f:
-    reader = csv.reader(f)
-    # 跳过第一行的表头 (EpochID, Total tx #...)
-    header = next(reader, None) 
-    
-    for row in reader:
-        if not row:
-            continue
-        try:
-            # 【核心修复】：只读取最后一列的数据 (CTX ratio)
-            val = float(row[-1].strip())
-            data.append(val * 100)
-        except (ValueError, IndexError):
-            continue
+print(f"✅ 成功读取：{file_path}")
 
-# 我们有 0~100 共 101 个点
-epochs = min(101, len(data))
-data = data[:epochs]
-x_axis = np.arange(0, epochs) # 从 Epoch 0 开始画
+# 2. 读取 CSV
+try:
+    df = pd.read_csv(file_path)
+    df.columns = [c.strip() for c in df.columns]
+except Exception as e:
+    print(f"❌ 读取 CSV 失败: {e}")
+    exit()
 
-# ==========================================
-# 🌟 学术论文级图表布局优化 (AERO 原文风格)
-# ==========================================
-plt.rcParams.update({
-    'font.family': 'Times New Roman',
-    'font.size': 14,
-    'axes.linewidth': 1.5,
-    'xtick.direction': 'in',
-    'ytick.direction': 'in',
-    'xtick.major.width': 1.5,
-    'ytick.major.width': 1.5,
-    'xtick.major.size': 6,
-    'ytick.major.size': 6,
-})
+col_epoch = df.columns[0]
+col_total = df.columns[1]
+col_normal = df.columns[2]
 
-fig, ax = plt.subplots(figsize=(8, 5), dpi=300) 
+# 3. 按 Epoch 聚合，单纯把相同 Epoch 的数据加起来，绝不做任何过滤！
+df_grouped = df.groupby(col_epoch)[[col_total, col_normal]].sum().reset_index()
 
-# 画出参考线
-ax.axhline(y=61.0, color='#d62728', linestyle='--', linewidth=2.5, label='AERO Baseline (61.0%)')
-ax.axhline(y=62.0, color='gray', linestyle='-.', linewidth=2, alpha=0.8, label='Wake-up Threshold (62.0%)')
+# 强制按 Epoch 顺序排好，防止线条乱飞
+df_grouped = df_grouped.sort_values(by=col_epoch)
 
-# 画出折线
-ax.plot(x_axis, data, color='#1f77b4', linestyle='-', linewidth=2.5, 
-        marker='o', markersize=6, markevery=10, markerfacecolor='white', markeredgewidth=2,
-        label='Our Approach (Adaptive-AERO)')
+# 计算跨片率
+df_grouped['CSTX_Ratio'] = ((df_grouped[col_total] - df_grouped[col_normal]) / df_grouped[col_total]) * 100
 
-ax.set_xlabel('Epoch', fontweight='bold', fontsize=16)
-ax.set_ylabel('Cross-Shard Tx Ratio (%)', fontweight='bold', fontsize=16)
+epochs = df_grouped[col_epoch].values
+cstx_ratios = df_grouped['CSTX_Ratio'].values
+total_txs = df_grouped[col_total].values
 
-ax.set_xlim(0, 100)
-# 纵坐标自适应
-ax.set_ylim(50, 80)
+# 4. 开始画图
+plt.rcParams.update({'font.family': 'Times New Roman', 'font.size': 14})
+mark_spacing = max(1, len(epochs) // 20)
 
-ax.grid(True, linestyle='-', color='#E0E0E0', linewidth=1)
-ax.set_axisbelow(True)
+# ====== 图 1：跨片率 ======
+fig1, ax1 = plt.subplots(figsize=(10, 5), dpi=300)
+ax1.plot(epochs, cstx_ratios, color='#1f77b4', linestyle='-', linewidth=2.5, 
+         marker='o', markersize=4, markevery=mark_spacing, markerfacecolor='white', markeredgewidth=1.5,
+         label='Cross-Shard Ratio')
 
-ax.legend(loc='upper right', frameon=True, edgecolor='black', fancybox=False, fontsize=12)
-
+ax1.set_xlabel('Epoch', fontweight='bold', fontsize=16)
+ax1.set_ylabel('Cross-Shard Tx Ratio (%)', fontweight='bold', fontsize=16)
+ax1.set_xlim(min(epochs), max(epochs))
+ax1.set_ylim(max(0, min(cstx_ratios)-5), min(100, max(cstx_ratios)+5))
+ax1.grid(True, linestyle='-', color='#E0E0E0')
+ax1.legend()
 plt.tight_layout()
-output_filename = 'AERO_Adaptive_Academic.png'
-plt.savefig(output_filename, bbox_inches='tight')
-plt.show()
+fig1.savefig('Calculated_CSTX_Ratio.png', bbox_inches='tight')
 
-print(f"✅ 学术版绘图完成！图表已保存为 figurePlot 目录下的: {output_filename}")
+# ====== 图 2：吞吐量 ======
+fig2, ax2 = plt.subplots(figsize=(10, 5), dpi=300)
+ax2.plot(epochs, total_txs, color='#2ca02c', linestyle='-', linewidth=2.5, 
+         marker='s', markersize=4, markevery=mark_spacing, markerfacecolor='white', markeredgewidth=1.5,
+         label='Total Tx Volume per Epoch')
+
+ax2.set_xlabel('Epoch', fontweight='bold', fontsize=16)
+ax2.set_ylabel('Total Transactions', fontweight='bold', fontsize=16)
+ax2.set_xlim(min(epochs), max(epochs))
+ax2.set_ylim(max(0, min(total_txs) - 500), max(total_txs) + 500)
+ax2.grid(True, linestyle='-', color='#E0E0E0')
+ax2.legend()
+plt.tight_layout()
+fig2.savefig('Calculated_Throughput.png', bbox_inches='tight')
+
+plt.show()
+print("🎉 画图完成！这次绝对是连续的真实曲线。")

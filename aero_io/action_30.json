@@ -1,44 +1,12 @@
 {
   "migrations": [
     {
-      "prefix": "52",
-      "to_shard": 2
-    },
-    {
       "prefix": "2a",
-      "to_shard": 0
-    },
-    {
-      "prefix": "58",
-      "to_shard": 2
-    },
-    {
-      "prefix": "4b",
       "to_shard": 1
     },
     {
-      "prefix": "3e",
-      "to_shard": 2
-    },
-    {
-      "prefix": "53",
-      "to_shard": 2
-    },
-    {
-      "prefix": "23",
-      "to_shard": 2
-    },
-    {
-      "prefix": "1d",
-      "to_shard": 2
-    },
-    {
-      "prefix": "16",
-      "to_shard": 2
-    },
-    {
-      "prefix": "72",
-      "to_shard": 3
+      "prefix": "ea",
+      "to_shard": 0
     }
   ]
 }

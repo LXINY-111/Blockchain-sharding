@@ -24,6 +24,8 @@ type PrefixStat struct {
 	CurrentShard int    `json:"current_shard"`
 	TXVolume     int    `json:"tx_volume"`
 	CSTXVolume   int    `json:"cstx_volume"`
+	// ✨ 新增：图表示特征，记录当前前缀与每个分片的交易边数量
+	EdgesToShard []int `json:"edges_to_shard"`
 }
 
 // AEROActionResponse 定义 Python 返回的动作
@@ -51,12 +53,6 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 	// 1.1 填充负载 (使用节点数近似)
 	copy(payload.ShardLoads, cs.VertexsNumInShard)
 
-	// 1.2 填充跨分片比例 (简单估算)
-	for i := 0; i < cs.ShardNum; i++ {
-		total := cs.Edges2Shard[i] + 1 // 防止除以0
-		payload.ShardCSTXRatios[i] = float64(cs.Edges2Shard[i]) / float64(total)
-	}
-
 	// 1.3 核心：按前缀聚合统计
 	// 假设前缀长度为2 (对应以太坊地址前几位，如 "0x1a")
 	prefixMap := make(map[string]*PrefixStat)
@@ -75,6 +71,7 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 				CurrentShard: cs.PartitionMap[v],
 				TXVolume:     0,
 				CSTXVolume:   0,
+				EdgesToShard: make([]int, cs.ShardNum),
 			}
 		}
 		stat := prefixMap[p]
@@ -82,9 +79,34 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 		// 统计交易量和跨分片交易
 		for _, u := range neighbors {
 			stat.TXVolume++
+			// 找到邻居所在的分片
+			neighborShard := cs.PartitionMap[u]
+			// ✨ 新增：累加到对应的分片引力槽中
+			stat.EdgesToShard[neighborShard]++
 			if cs.PartitionMap[v] != cs.PartitionMap[u] {
 				stat.CSTXVolume++
 			}
+		}
+	}
+
+	// =========================================================
+	// 1.2 (修正版) 根据前缀统计精准计算每个分片的跨片率
+	// =========================================================
+	shardTotalTx := make([]int, cs.ShardNum)
+	shardCSTx := make([]int, cs.ShardNum)
+
+	// 将所有前缀的交易量，按其所在的分片进行累加
+	for _, stat := range prefixMap {
+		shardTotalTx[stat.CurrentShard] += stat.TXVolume
+		shardCSTx[stat.CurrentShard] += stat.CSTXVolume
+	}
+
+	// 计算每个分片的真实跨片率
+	for i := 0; i < cs.ShardNum; i++ {
+		if shardTotalTx[i] > 0 {
+			payload.ShardCSTXRatios[i] = float64(shardCSTx[i]) / float64(shardTotalTx[i])
+		} else {
+			payload.ShardCSTXRatios[i] = 0.0 // 如果该分片没有交易，则跨片率为 0
 		}
 	}
 
@@ -106,15 +128,7 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 	}
 
 	// 核心创新点：全阶段阈值触发微迁移
-	triggerThreshold := 0.62 // 设定阈值，你可以根据基线调整为 0.60 或 0.62
-
-	// 如果图中的交易量太少（例如刚启动时），或者跨片率低于阈值，则直接拦截，不触发迁移
-	if totalTX < 100 || currentRatio <= triggerThreshold {
-		fmt.Printf(">>> [AERO-Micro] 监控点 %d: 当前跨片率 %.2f%% (低于阈值 %.2f%%)，无需唤醒 PPO，平滑运行中...\n", epoch, currentRatio*100, triggerThreshold*100)
-		// 重新计算边界统计以保持状态连贯
-		cs.ComputeEdges2Shard()
-		return nil // 👈 这里 return nil 后，下面的 Python 调用和 JSON 生成就全被跳过了！
-	}
+	//triggerThreshold := 0.62 // 设定阈值，你可以根据基线调整为 0.60 或 0.62
 
 	fmt.Printf(">>> [AERO-Micro] 🚨 触发警报！监控点 %d: 跨片率飙升至 %.2f%%！立即唤醒 PPO 智能体进行微迁移！\n", epoch, currentRatio*100)
 	// =========================================================
@@ -123,9 +137,9 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 
 	// 筛选有跨分片行为的前缀
 	for _, stat := range prefixMap {
-		//if stat.CSTXVolume > 0 {
-		payload.CandidatePrefixes = append(payload.CandidatePrefixes, *stat)
-		//}
+		if stat.CSTXVolume > 0 {
+			payload.CandidatePrefixes = append(payload.CandidatePrefixes, *stat)
+		}
 	}
 
 	//请务必加上这一行！👇👇👇
@@ -135,15 +149,15 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 	// 🚑🚑🚑 【新增】救护车代码：防止死锁 🚑🚑🚑
 	// 如果列表为空，Python 的保底逻辑无法触发。
 	// 我们强制塞一个“虚拟前缀”进去，充当心跳包。
-	if len(payload.CandidatePrefixes) == 0 {
-		fmt.Println("!!! [DEBUG] 列表为空！正在注入虚拟前缀以激活系统...")
-		payload.CandidatePrefixes = append(payload.CandidatePrefixes, PrefixStat{
-			Prefix:       "00", // 一个假的十六进制前缀
-			CurrentShard: 0,    // 假装在分片0
-			TXVolume:     1,
-			CSTXVolume:   1,
-		})
-	}
+	//if len(payload.CandidatePrefixes) == 0 {
+	//fmt.Println("!!! [DEBUG] 列表为空！正在注入虚拟前缀以激活系统...")
+	//payload.CandidatePrefixes = append(payload.CandidatePrefixes, PrefixStat{
+	//Prefix:       "00", // 一个假的十六进制前缀
+	//CurrentShard: 0,    // 假装在分片0
+	//TXVolume:     1,
+	//CSTXVolume:   1,
+	//})
+	//}
 	// =======================================================
 
 	// 2. 导出 JSON 并调用 Python
@@ -187,30 +201,21 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 		}
 	}
 
-	// 🚑🚑🚑【终极混合保底】🚑🚑🚑
+	// =========================================================
+	// 🚑🚑🚑【防死锁心跳包机制】🚑🚑🚑
+	// 如果 PPO 决定“按兵不动”（或者没有任何前缀满足要求），导致迁移列表为空
+	// 为了防止底层 PBFT 共识引擎因为空提案而陷入死锁（卡在当前 Epoch 不走）
+	// 我们必须注入一个“假动作”。这个假动作绝对不能影响真实的图结构和跨片率！
 	if len(res) == 0 {
-		fmt.Println("!!! [DEBUG] 正在寻找【真实节点】以强制切换 Epoch...")
-		foundReal := false
+		fmt.Println("!!! [DEBUG] PPO 决定不迁移 (或无候选)。为了防止 PBFT 死锁，正在注入【虚拟账户】心跳包...")
 
-		// 1. 先尝试抓真实节点
-		for v := range cs.NetGraph.VertexSet {
-			if len(v.Addr) > 2 {
-				targetShard := (cs.PartitionMap[v] + 1) % cs.ShardNum
-				res[v.Addr] = uint64(targetShard)
-				fmt.Printf("!!! [DEBUG] 成功强制迁移真实节点: %s (%d -> %d)\n", v.Addr, cs.PartitionMap[v], targetShard)
-				foundReal = true
-				break
-			}
-		}
+		// 使用一个绝对不可能在真实以太坊数据中存在的、没有任何交易记录的假地址
+		fakeAddr := "000000000000000000000000000000000000dead"
 
-		// 2. 如果真实节点没抓到（比如刚启动图是空的），就用假地址兜底
-		if !foundReal {
-			fmt.Println("!!! [DEBUG] 真实图为空，启用【虚拟账户】兜底...")
-			fakeAddr := "0000000000000000000000000000000000000000"
-			res[fakeAddr] = 1
-		}
+		// 将其强行指派给分片 0（或者任何分片都行，因为它没有邻居，不会产生任何真实的跨片边）
+		res[fakeAddr] = 0
 	}
-	// ---------------------------------------------------------
+	// =========================================================
 
 	// 重新计算边界统计
 	cs.ComputeEdges2Shard()

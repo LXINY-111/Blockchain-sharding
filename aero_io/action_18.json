@@ -6,51 +6,7 @@
     },
     {
       "prefix": "ea",
-      "to_shard": 0
-    },
-    {
-      "prefix": "a4",
       "to_shard": 2
-    },
-    {
-      "prefix": "58",
-      "to_shard": 2
-    },
-    {
-      "prefix": "52",
-      "to_shard": 2
-    },
-    {
-      "prefix": "9e",
-      "to_shard": 2
-    },
-    {
-      "prefix": "26",
-      "to_shard": 2
-    },
-    {
-      "prefix": "68",
-      "to_shard": 2
-    },
-    {
-      "prefix": "b2",
-      "to_shard": 2
-    },
-    {
-      "prefix": "04",
-      "to_shard": 2
-    },
-    {
-      "prefix": "40",
-      "to_shard": 2
-    },
-    {
-      "prefix": "0c",
-      "to_shard": 2
-    },
-    {
-      "prefix": "4a",
-      "to_shard": 0
     }
   ]
 }

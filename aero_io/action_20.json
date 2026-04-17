@@ -2,47 +2,15 @@
   "migrations": [
     {
       "prefix": "2a",
-      "to_shard": 2
-    },
-    {
-      "prefix": "ea",
-      "to_shard": 2
-    },
-    {
-      "prefix": "ed",
-      "to_shard": 2
-    },
-    {
-      "prefix": "32",
-      "to_shard": 2
-    },
-    {
-      "prefix": "86",
-      "to_shard": 2
-    },
-    {
-      "prefix": "68",
       "to_shard": 0
     },
     {
-      "prefix": "37",
-      "to_shard": 2
+      "prefix": "ea",
+      "to_shard": 3
     },
     {
-      "prefix": "55",
-      "to_shard": 2
-    },
-    {
-      "prefix": "6c",
-      "to_shard": 2
-    },
-    {
-      "prefix": "24",
-      "to_shard": 2
-    },
-    {
-      "prefix": "9a",
-      "to_shard": 2
+      "prefix": "91",
+      "to_shard": 1
     }
   ]
 }

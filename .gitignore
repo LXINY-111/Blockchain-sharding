@@ -6,3 +6,11 @@ expTest
 # Do not upload your executable files!
 *.exe
 
+# 忽略训练生成的 json 动作日志
+action_*.json
+
+# 忽略 PyTorch 模型权重文件
+*.pth
+
+# 忽略生成的图表 (如果这些图不需要上传的话)
+*.png

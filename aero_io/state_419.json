@@ -1,0 +1,3065 @@
+{
+ "epoch": 419,
+ "shard_loads": [
+  459,
+  488,
+  479,
+  450
+ ],
+ "shard_cstx_ratios": [
+  0.7824675324675324,
+  0.7176470588235294,
+  0.7472312703583062,
+  0.7692307692307693
+ ],
+ "candidate_prefixes": [
+  {
+   "prefix": "8a",
+   "current_shard": 3,
+   "tx_volume": 9,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    5,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "ad",
+   "current_shard": 1,
+   "tx_volume": 3,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "9a",
+   "current_shard": 3,
+   "tx_volume": 17,
+   "cstx_volume": 16,
+   "edges_to_shard": [
+    2,
+    5,
+    4,
+    6
+   ]
+  },
+  {
+   "prefix": "bd",
+   "current_shard": 0,
+   "tx_volume": 7,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    3,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "75",
+   "current_shard": 3,
+   "tx_volume": 9,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    3,
+    3,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "c9",
+   "current_shard": 0,
+   "tx_volume": 16,
+   "cstx_volume": 13,
+   "edges_to_shard": [
+    3,
+    8,
+    3,
+    2
+   ]
+  },
+  {
+   "prefix": "92",
+   "current_shard": 0,
+   "tx_volume": 25,
+   "cstx_volume": 23,
+   "edges_to_shard": [
+    7,
+    8,
+    3,
+    7
+   ]
+  },
+  {
+   "prefix": "0b",
+   "current_shard": 1,
+   "tx_volume": 9,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    0,
+    3,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "71",
+   "current_shard": 0,
+   "tx_volume": 12,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    0,
+    2,
+    2,
+    8
+   ]
+  },
+  {
+   "prefix": "24",
+   "current_shard": 3,
+   "tx_volume": 17,
+   "cstx_volume": 15,
+   "edges_to_shard": [
+    2,
+    9,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "6a",
+   "current_shard": 2,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    3,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "3d",
+   "current_shard": 0,
+   "tx_volume": 14,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    1,
+    7,
+    3,
+    3
+   ]
+  },
+  {
+   "prefix": "b9",
+   "current_shard": 1,
+   "tx_volume": 13,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    1,
+    4,
+    3,
+    5
+   ]
+  },
+  {
+   "prefix": "2f",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "a8",
+   "current_shard": 0,
+   "tx_volume": 22,
+   "cstx_volume": 16,
+   "edges_to_shard": [
+    4,
+    7,
+    5,
+    6
+   ]
+  },
+  {
+   "prefix": "c4",
+   "current_shard": 1,
+   "tx_volume": 11,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    0,
+    5,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "53",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    3,
+    3,
+    1
+   ]
+  },
+  {
+   "prefix": "4f",
+   "current_shard": 1,
+   "tx_volume": 4,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    2,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "3e",
+   "current_shard": 0,
+   "tx_volume": 3,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "37",
+   "current_shard": 2,
+   "tx_volume": 12,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    1,
+    3,
+    3,
+    5
+   ]
+  },
+  {
+   "prefix": "f7",
+   "current_shard": 2,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    1,
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "f4",
+   "current_shard": 0,
+   "tx_volume": 8,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    2,
+    4,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "a9",
+   "current_shard": 1,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    4,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "a6",
+   "current_shard": 0,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    4,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "66",
+   "current_shard": 2,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    3,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "4a",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    6,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "3a",
+   "current_shard": 1,
+   "tx_volume": 5,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "fc",
+   "current_shard": 3,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    2,
+    4,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "05",
+   "current_shard": 0,
+   "tx_volume": 8,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    1,
+    2,
+    1,
+    4
+   ]
+  },
+  {
+   "prefix": "36",
+   "current_shard": 1,
+   "tx_volume": 10,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    5,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "7d",
+   "current_shard": 3,
+   "tx_volume": 12,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    0,
+    8,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "ed",
+   "current_shard": 3,
+   "tx_volume": 32,
+   "cstx_volume": 21,
+   "edges_to_shard": [
+    5,
+    15,
+    11,
+    1
+   ]
+  },
+  {
+   "prefix": "a3",
+   "current_shard": 0,
+   "tx_volume": 9,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    2,
+    6,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "3f",
+   "current_shard": 1,
+   "tx_volume": 3,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    1,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "67",
+   "current_shard": 2,
+   "tx_volume": 16,
+   "cstx_volume": 13,
+   "edges_to_shard": [
+    1,
+    7,
+    4,
+    4
+   ]
+  },
+  {
+   "prefix": "ee",
+   "current_shard": 3,
+   "tx_volume": 13,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    0,
+    5,
+    1,
+    7
+   ]
+  },
+  {
+   "prefix": "1e",
+   "current_shard": 2,
+   "tx_volume": 13,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    2,
+    5,
+    3,
+    3
+   ]
+  },
+  {
+   "prefix": "8d",
+   "current_shard": 1,
+   "tx_volume": 5,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    3,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "9e",
+   "current_shard": 3,
+   "tx_volume": 59,
+   "cstx_volume": 48,
+   "edges_to_shard": [
+    13,
+    11,
+    20,
+    15
+   ]
+  },
+  {
+   "prefix": "e5",
+   "current_shard": 2,
+   "tx_volume": 10,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    1,
+    5,
+    3,
+    1
+   ]
+  },
+  {
+   "prefix": "bf",
+   "current_shard": 0,
+   "tx_volume": 11,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    3,
+    2,
+    5
+   ]
+  },
+  {
+   "prefix": "b5",
+   "current_shard": 3,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "06",
+   "current_shard": 2,
+   "tx_volume": 15,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    2,
+    5,
+    0,
+    8
+   ]
+  },
+  {
+   "prefix": "59",
+   "current_shard": 2,
+   "tx_volume": 6,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    4
+   ]
+  },
+  {
+   "prefix": "bb",
+   "current_shard": 3,
+   "tx_volume": 14,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    2,
+    9,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "ff",
+   "current_shard": 1,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    4,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "c5",
+   "current_shard": 1,
+   "tx_volume": 16,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    3,
+    7,
+    0,
+    6
+   ]
+  },
+  {
+   "prefix": "4e",
+   "current_shard": 3,
+   "tx_volume": 8,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "prefix": "6b",
+   "current_shard": 3,
+   "tx_volume": 12,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    1,
+    8,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "27",
+   "current_shard": 3,
+   "tx_volume": 5,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    4,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "d9",
+   "current_shard": 3,
+   "tx_volume": 9,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    2,
+    2,
+    4,
+    1
+   ]
+  },
+  {
+   "prefix": "da",
+   "current_shard": 1,
+   "tx_volume": 5,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    3,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "b6",
+   "current_shard": 3,
+   "tx_volume": 7,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    3,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "43",
+   "current_shard": 0,
+   "tx_volume": 8,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    2,
+    4,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "9c",
+   "current_shard": 2,
+   "tx_volume": 12,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    3,
+    3,
+    4
+   ]
+  },
+  {
+   "prefix": "16",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    5,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "f0",
+   "current_shard": 0,
+   "tx_volume": 9,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    0,
+    5,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "96",
+   "current_shard": 2,
+   "tx_volume": 21,
+   "cstx_volume": 16,
+   "edges_to_shard": [
+    4,
+    10,
+    4,
+    3
+   ]
+  },
+  {
+   "prefix": "1a",
+   "current_shard": 2,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    1,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "d2",
+   "current_shard": 3,
+   "tx_volume": 9,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    0,
+    5,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "e1",
+   "current_shard": 3,
+   "tx_volume": 12,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    3,
+    6,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "8c",
+   "current_shard": 3,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    2,
+    4,
+    2
+   ]
+  },
+  {
+   "prefix": "fb",
+   "current_shard": 2,
+   "tx_volume": 23,
+   "cstx_volume": 19,
+   "edges_to_shard": [
+    5,
+    4,
+    7,
+    7
+   ]
+  },
+  {
+   "prefix": "00",
+   "current_shard": 2,
+   "tx_volume": 17,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    2,
+    9,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "54",
+   "current_shard": 2,
+   "tx_volume": 11,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    3,
+    6,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "64",
+   "current_shard": 2,
+   "tx_volume": 9,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    1,
+    5,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "f5",
+   "current_shard": 2,
+   "tx_volume": 5,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    1,
+    2,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "8e",
+   "current_shard": 1,
+   "tx_volume": 10,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    0,
+    3,
+    2,
+    5
+   ]
+  },
+  {
+   "prefix": "04",
+   "current_shard": 2,
+   "tx_volume": 37,
+   "cstx_volume": 24,
+   "edges_to_shard": [
+    11,
+    13,
+    8,
+    5
+   ]
+  },
+  {
+   "prefix": "a0",
+   "current_shard": 3,
+   "tx_volume": 15,
+   "cstx_volume": 14,
+   "edges_to_shard": [
+    0,
+    11,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "46",
+   "current_shard": 2,
+   "tx_volume": 10,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    0,
+    4,
+    1,
+    5
+   ]
+  },
+  {
+   "prefix": "42",
+   "current_shard": 0,
+   "tx_volume": 14,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    0,
+    10,
+    3,
+    1
+   ]
+  },
+  {
+   "prefix": "29",
+   "current_shard": 1,
+   "tx_volume": 12,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    3,
+    4,
+    1,
+    4
+   ]
+  },
+  {
+   "prefix": "91",
+   "current_shard": 1,
+   "tx_volume": 131,
+   "cstx_volume": 96,
+   "edges_to_shard": [
+    31,
+    30,
+    35,
+    35
+   ]
+  },
+  {
+   "prefix": "0d",
+   "current_shard": 1,
+   "tx_volume": 9,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    3,
+    5,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "65",
+   "current_shard": 2,
+   "tx_volume": 16,
+   "cstx_volume": 14,
+   "edges_to_shard": [
+    0,
+    3,
+    2,
+    11
+   ]
+  },
+  {
+   "prefix": "0e",
+   "current_shard": 1,
+   "tx_volume": 23,
+   "cstx_volume": 16,
+   "edges_to_shard": [
+    5,
+    11,
+    4,
+    3
+   ]
+  },
+  {
+   "prefix": "af",
+   "current_shard": 2,
+   "tx_volume": 7,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    3,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "d6",
+   "current_shard": 3,
+   "tx_volume": 10,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    5,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "9f",
+   "current_shard": 2,
+   "tx_volume": 7,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    6,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "33",
+   "current_shard": 2,
+   "tx_volume": 5,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    4,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "63",
+   "current_shard": 2,
+   "tx_volume": 13,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    0,
+    6,
+    2,
+    5
+   ]
+  },
+  {
+   "prefix": "34",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    1,
+    5,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "68",
+   "current_shard": 3,
+   "tx_volume": 35,
+   "cstx_volume": 31,
+   "edges_to_shard": [
+    3,
+    10,
+    8,
+    14
+   ]
+  },
+  {
+   "prefix": "73",
+   "current_shard": 0,
+   "tx_volume": 10,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    5,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "14",
+   "current_shard": 3,
+   "tx_volume": 13,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    0,
+    2,
+    5,
+    6
+   ]
+  },
+  {
+   "prefix": "2a",
+   "current_shard": 2,
+   "tx_volume": 760,
+   "cstx_volume": 564,
+   "edges_to_shard": [
+    180,
+    200,
+    178,
+    202
+   ]
+  },
+  {
+   "prefix": "89",
+   "current_shard": 2,
+   "tx_volume": 8,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    2,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "e6",
+   "current_shard": 2,
+   "tx_volume": 14,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    0,
+    5,
+    1,
+    8
+   ]
+  },
+  {
+   "prefix": "c7",
+   "current_shard": 2,
+   "tx_volume": 12,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    3,
+    0,
+    7
+   ]
+  },
+  {
+   "prefix": "07",
+   "current_shard": 1,
+   "tx_volume": 14,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    1,
+    6,
+    3,
+    4
+   ]
+  },
+  {
+   "prefix": "c2",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    5,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "d8",
+   "current_shard": 2,
+   "tx_volume": 10,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    4,
+    2,
+    3
+   ]
+  },
+  {
+   "prefix": "69",
+   "current_shard": 2,
+   "tx_volume": 8,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    2,
+    3,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "be",
+   "current_shard": 1,
+   "tx_volume": 6,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    5,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "0a",
+   "current_shard": 1,
+   "tx_volume": 6,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    4,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "80",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    4,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "7b",
+   "current_shard": 3,
+   "tx_volume": 14,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    3,
+    7,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "20",
+   "current_shard": 2,
+   "tx_volume": 9,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    1,
+    2,
+    3,
+    3
+   ]
+  },
+  {
+   "prefix": "a5",
+   "current_shard": 2,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    3,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "6f",
+   "current_shard": 3,
+   "tx_volume": 10,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    1,
+    4,
+    1,
+    4
+   ]
+  },
+  {
+   "prefix": "f2",
+   "current_shard": 3,
+   "tx_volume": 7,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    5,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "2c",
+   "current_shard": 3,
+   "tx_volume": 10,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    8,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "87",
+   "current_shard": 2,
+   "tx_volume": 10,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    4,
+    4,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "a1",
+   "current_shard": 2,
+   "tx_volume": 8,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    0,
+    4,
+    0,
+    4
+   ]
+  },
+  {
+   "prefix": "c6",
+   "current_shard": 3,
+   "tx_volume": 7,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    1,
+    3,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "e7",
+   "current_shard": 2,
+   "tx_volume": 18,
+   "cstx_volume": 15,
+   "edges_to_shard": [
+    5,
+    3,
+    6,
+    4
+   ]
+  },
+  {
+   "prefix": "0c",
+   "current_shard": 0,
+   "tx_volume": 12,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    1,
+    4,
+    2,
+    5
+   ]
+  },
+  {
+   "prefix": "7f",
+   "current_shard": 2,
+   "tx_volume": 8,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    2,
+    3,
+    3
+   ]
+  },
+  {
+   "prefix": "30",
+   "current_shard": 2,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    6,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "41",
+   "current_shard": 0,
+   "tx_volume": 12,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    0,
+    4,
+    2,
+    6
+   ]
+  },
+  {
+   "prefix": "5a",
+   "current_shard": 1,
+   "tx_volume": 6,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    3,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "e4",
+   "current_shard": 1,
+   "tx_volume": 12,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    2,
+    2,
+    4,
+    4
+   ]
+  },
+  {
+   "prefix": "dd",
+   "current_shard": 2,
+   "tx_volume": 7,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    4,
+    3,
+    0
+   ]
+  },
+  {
+   "prefix": "4d",
+   "current_shard": 0,
+   "tx_volume": 4,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    4,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "21",
+   "current_shard": 3,
+   "tx_volume": 3,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    1,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "47",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    5,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "ec",
+   "current_shard": 3,
+   "tx_volume": 15,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    0,
+    9,
+    1,
+    5
+   ]
+  },
+  {
+   "prefix": "7e",
+   "current_shard": 1,
+   "tx_volume": 10,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    1,
+    3,
+    5,
+    1
+   ]
+  },
+  {
+   "prefix": "83",
+   "current_shard": 0,
+   "tx_volume": 18,
+   "cstx_volume": 15,
+   "edges_to_shard": [
+    4,
+    3,
+    8,
+    3
+   ]
+  },
+  {
+   "prefix": "5f",
+   "current_shard": 0,
+   "tx_volume": 13,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    1,
+    5,
+    2,
+    5
+   ]
+  },
+  {
+   "prefix": "86",
+   "current_shard": 3,
+   "tx_volume": 11,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    1,
+    5,
+    4,
+    1
+   ]
+  },
+  {
+   "prefix": "45",
+   "current_shard": 0,
+   "tx_volume": 5,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    3,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "78",
+   "current_shard": 2,
+   "tx_volume": 13,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    2,
+    5,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "d4",
+   "current_shard": 3,
+   "tx_volume": 10,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    1,
+    2,
+    5,
+    2
+   ]
+  },
+  {
+   "prefix": "84",
+   "current_shard": 3,
+   "tx_volume": 9,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    6,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "38",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "19",
+   "current_shard": 0,
+   "tx_volume": 14,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    3,
+    7,
+    3,
+    1
+   ]
+  },
+  {
+   "prefix": "ae",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    5,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "60",
+   "current_shard": 3,
+   "tx_volume": 11,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    6,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "55",
+   "current_shard": 0,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    6,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "57",
+   "current_shard": 0,
+   "tx_volume": 9,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    1,
+    1,
+    0,
+    7
+   ]
+  },
+  {
+   "prefix": "28",
+   "current_shard": 1,
+   "tx_volume": 9,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    0,
+    5,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "ac",
+   "current_shard": 0,
+   "tx_volume": 14,
+   "cstx_volume": 13,
+   "edges_to_shard": [
+    1,
+    8,
+    4,
+    1
+   ]
+  },
+  {
+   "prefix": "5d",
+   "current_shard": 0,
+   "tx_volume": 10,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    5,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "90",
+   "current_shard": 2,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "08",
+   "current_shard": 2,
+   "tx_volume": 5,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    1,
+    3,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "1b",
+   "current_shard": 3,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "prefix": "01",
+   "current_shard": 2,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    4,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "d0",
+   "current_shard": 3,
+   "tx_volume": 11,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    5,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "99",
+   "current_shard": 0,
+   "tx_volume": 11,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    5,
+    2,
+    3
+   ]
+  },
+  {
+   "prefix": "6e",
+   "current_shard": 2,
+   "tx_volume": 14,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    7,
+    1,
+    5
+   ]
+  },
+  {
+   "prefix": "de",
+   "current_shard": 0,
+   "tx_volume": 14,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    3,
+    6,
+    3,
+    2
+   ]
+  },
+  {
+   "prefix": "3b",
+   "current_shard": 3,
+   "tx_volume": 6,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    1,
+    1,
+    0,
+    4
+   ]
+  },
+  {
+   "prefix": "d5",
+   "current_shard": 0,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    4,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "c1",
+   "current_shard": 2,
+   "tx_volume": 12,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    1,
+    6,
+    2,
+    3
+   ]
+  },
+  {
+   "prefix": "48",
+   "current_shard": 0,
+   "tx_volume": 5,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "8b",
+   "current_shard": 2,
+   "tx_volume": 22,
+   "cstx_volume": 19,
+   "edges_to_shard": [
+    2,
+    10,
+    6,
+    4
+   ]
+  },
+  {
+   "prefix": "3c",
+   "current_shard": 2,
+   "tx_volume": 8,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    5,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "fe",
+   "current_shard": 3,
+   "tx_volume": 11,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    0,
+    4,
+    3,
+    4
+   ]
+  },
+  {
+   "prefix": "2e",
+   "current_shard": 3,
+   "tx_volume": 11,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    0,
+    8,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "4c",
+   "current_shard": 1,
+   "tx_volume": 7,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    3,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "76",
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "f6",
+   "current_shard": 3,
+   "tx_volume": 7,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    4,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "44",
+   "current_shard": 1,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    3,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "7a",
+   "current_shard": 3,
+   "tx_volume": 9,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    3,
+    3,
+    2
+   ]
+  },
+  {
+   "prefix": "ce",
+   "current_shard": 0,
+   "tx_volume": 10,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    1,
+    0,
+    8
+   ]
+  },
+  {
+   "prefix": "1d",
+   "current_shard": 1,
+   "tx_volume": 9,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    0,
+    4,
+    2,
+    3
+   ]
+  },
+  {
+   "prefix": "81",
+   "current_shard": 1,
+   "tx_volume": 6,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    1,
+    1,
+    4
+   ]
+  },
+  {
+   "prefix": "74",
+   "current_shard": 2,
+   "tx_volume": 14,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    2,
+    5,
+    1,
+    6
+   ]
+  },
+  {
+   "prefix": "dc",
+   "current_shard": 1,
+   "tx_volume": 12,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    2,
+    3,
+    6,
+    1
+   ]
+  },
+  {
+   "prefix": "d7",
+   "current_shard": 1,
+   "tx_volume": 3,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "98",
+   "current_shard": 0,
+   "tx_volume": 5,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    2,
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "72",
+   "current_shard": 0,
+   "tx_volume": 7,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    5,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "f9",
+   "current_shard": 2,
+   "tx_volume": 28,
+   "cstx_volume": 21,
+   "edges_to_shard": [
+    2,
+    12,
+    6,
+    8
+   ]
+  },
+  {
+   "prefix": "40",
+   "current_shard": 0,
+   "tx_volume": 4,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    3,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "ab",
+   "current_shard": 2,
+   "tx_volume": 11,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    1,
+    5,
+    0,
+    5
+   ]
+  },
+  {
+   "prefix": "6c",
+   "current_shard": 3,
+   "tx_volume": 31,
+   "cstx_volume": 19,
+   "edges_to_shard": [
+    6,
+    11,
+    5,
+    9
+   ]
+  },
+  {
+   "prefix": "51",
+   "current_shard": 1,
+   "tx_volume": 10,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    2,
+    4,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "62",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    6,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "a7",
+   "current_shard": 0,
+   "tx_volume": 7,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    1,
+    3,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "25",
+   "current_shard": 2,
+   "tx_volume": 5,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    3,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "22",
+   "current_shard": 3,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    0,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "95",
+   "current_shard": 2,
+   "tx_volume": 12,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    5,
+    0,
+    6
+   ]
+  },
+  {
+   "prefix": "49",
+   "current_shard": 1,
+   "tx_volume": 19,
+   "cstx_volume": 16,
+   "edges_to_shard": [
+    3,
+    7,
+    2,
+    7
+   ]
+  },
+  {
+   "prefix": "f3",
+   "current_shard": 3,
+   "tx_volume": 18,
+   "cstx_volume": 16,
+   "edges_to_shard": [
+    3,
+    8,
+    2,
+    5
+   ]
+  },
+  {
+   "prefix": "32",
+   "current_shard": 3,
+   "tx_volume": 111,
+   "cstx_volume": 84,
+   "edges_to_shard": [
+    33,
+    29,
+    23,
+    26
+   ]
+  },
+  {
+   "prefix": "cc",
+   "current_shard": 2,
+   "tx_volume": 9,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    5,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "5b",
+   "current_shard": 0,
+   "tx_volume": 11,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    3,
+    5,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "50",
+   "current_shard": 2,
+   "tx_volume": 12,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    1,
+    5,
+    1,
+    5
+   ]
+  },
+  {
+   "prefix": "ca",
+   "current_shard": 2,
+   "tx_volume": 9,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    0,
+    6,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "cf",
+   "current_shard": 2,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    4
+   ]
+  },
+  {
+   "prefix": "a2",
+   "current_shard": 0,
+   "tx_volume": 4,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    2,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "94",
+   "current_shard": 0,
+   "tx_volume": 3,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "e8",
+   "current_shard": 0,
+   "tx_volume": 9,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    4,
+    4,
+    1
+   ]
+  },
+  {
+   "prefix": "0f",
+   "current_shard": 1,
+   "tx_volume": 5,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "d3",
+   "current_shard": 3,
+   "tx_volume": 14,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    1,
+    11,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "77",
+   "current_shard": 3,
+   "tx_volume": 20,
+   "cstx_volume": 17,
+   "edges_to_shard": [
+    2,
+    8,
+    4,
+    6
+   ]
+  },
+  {
+   "prefix": "aa",
+   "current_shard": 2,
+   "tx_volume": 14,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    2,
+    8,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "e0",
+   "current_shard": 2,
+   "tx_volume": 11,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    4,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "prefix": "12",
+   "current_shard": 0,
+   "tx_volume": 3,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    3,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "db",
+   "current_shard": 1,
+   "tx_volume": 7,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "79",
+   "current_shard": 1,
+   "tx_volume": 5,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    3,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "31",
+   "current_shard": 1,
+   "tx_volume": 9,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    2,
+    3,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "eb",
+   "current_shard": 3,
+   "tx_volume": 5,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    2,
+    2,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "15",
+   "current_shard": 3,
+   "tx_volume": 10,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    0,
+    5,
+    1,
+    4
+   ]
+  },
+  {
+   "prefix": "8f",
+   "current_shard": 0,
+   "tx_volume": 5,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    5,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "cd",
+   "current_shard": 2,
+   "tx_volume": 15,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    3,
+    4,
+    3,
+    5
+   ]
+  },
+  {
+   "prefix": "13",
+   "current_shard": 3,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    2,
+    2,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "56",
+   "current_shard": 2,
+   "tx_volume": 6,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    1,
+    2,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "b8",
+   "current_shard": 0,
+   "tx_volume": 16,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    8,
+    5,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "6d",
+   "current_shard": 2,
+   "tx_volume": 7,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    3,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "70",
+   "current_shard": 3,
+   "tx_volume": 14,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    0,
+    10,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "f1",
+   "current_shard": 2,
+   "tx_volume": 3,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "2d",
+   "current_shard": 2,
+   "tx_volume": 10,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    2,
+    6,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "1c",
+   "current_shard": 0,
+   "tx_volume": 15,
+   "cstx_volume": 13,
+   "edges_to_shard": [
+    1,
+    3,
+    2,
+    9
+   ]
+  },
+  {
+   "prefix": "c8",
+   "current_shard": 1,
+   "tx_volume": 6,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    5,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "9b",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    5
+   ]
+  },
+  {
+   "prefix": "b2",
+   "current_shard": 2,
+   "tx_volume": 39,
+   "cstx_volume": 26,
+   "edges_to_shard": [
+    4,
+    10,
+    14,
+    11
+   ]
+  },
+  {
+   "prefix": "4b",
+   "current_shard": 0,
+   "tx_volume": 52,
+   "cstx_volume": 38,
+   "edges_to_shard": [
+    13,
+    18,
+    13,
+    8
+   ]
+  },
+  {
+   "prefix": "82",
+   "current_shard": 2,
+   "tx_volume": 17,
+   "cstx_volume": 14,
+   "edges_to_shard": [
+    0,
+    8,
+    2,
+    7
+   ]
+  },
+  {
+   "prefix": "18",
+   "current_shard": 3,
+   "tx_volume": 3,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    1,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "b0",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    6,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "c3",
+   "current_shard": 1,
+   "tx_volume": 9,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    1,
+    6,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "17",
+   "current_shard": 1,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "prefix": "f8",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    2,
+    4,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "e9",
+   "current_shard": 1,
+   "tx_volume": 9,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    2,
+    7,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "58",
+   "current_shard": 1,
+   "tx_volume": 20,
+   "cstx_volume": 10,
+   "edges_to_shard": [
+    3,
+    10,
+    4,
+    3
+   ]
+  },
+  {
+   "prefix": "d1",
+   "current_shard": 3,
+   "tx_volume": 10,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    3,
+    4,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "85",
+   "current_shard": 3,
+   "tx_volume": 6,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    2,
+    3,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "23",
+   "current_shard": 3,
+   "tx_volume": 9,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    5,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "df",
+   "current_shard": 0,
+   "tx_volume": 11,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    3,
+    5,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "c0",
+   "current_shard": 2,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    1,
+    3,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "52",
+   "current_shard": 3,
+   "tx_volume": 3,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "10",
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "e2",
+   "current_shard": 3,
+   "tx_volume": 11,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    4,
+    5,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "bc",
+   "current_shard": 3,
+   "tx_volume": 13,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    2,
+    5,
+    1,
+    5
+   ]
+  },
+  {
+   "prefix": "97",
+   "current_shard": 1,
+   "tx_volume": 5,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    2,
+    2,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "ea",
+   "current_shard": 1,
+   "tx_volume": 329,
+   "cstx_volume": 252,
+   "edges_to_shard": [
+    81,
+    83,
+    87,
+    78
+   ]
+  },
+  {
+   "prefix": "9d",
+   "current_shard": 1,
+   "tx_volume": 15,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    1,
+    7,
+    1,
+    6
+   ]
+  },
+  {
+   "prefix": "ef",
+   "current_shard": 0,
+   "tx_volume": 9,
+   "cstx_volume": 9,
+   "edges_to_shard": [
+    1,
+    3,
+    1,
+    4
+   ]
+  },
+  {
+   "prefix": "b3",
+   "current_shard": 2,
+   "tx_volume": 26,
+   "cstx_volume": 20,
+   "edges_to_shard": [
+    5,
+    10,
+    5,
+    6
+   ]
+  },
+  {
+   "prefix": "5c",
+   "current_shard": 1,
+   "tx_volume": 12,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    3,
+    3,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "b7",
+   "current_shard": 3,
+   "tx_volume": 5,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    0,
+    3,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "ba",
+   "current_shard": 1,
+   "tx_volume": 10,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    0,
+    2,
+    2,
+    6
+   ]
+  },
+  {
+   "prefix": "02",
+   "current_shard": 1,
+   "tx_volume": 13,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    2,
+    6,
+    4,
+    1
+   ]
+  },
+  {
+   "prefix": "39",
+   "current_shard": 3,
+   "tx_volume": 5,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    5,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "09",
+   "current_shard": 1,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "1f",
+   "current_shard": 0,
+   "tx_volume": 4,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    2,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "e3",
+   "current_shard": 3,
+   "tx_volume": 17,
+   "cstx_volume": 14,
+   "edges_to_shard": [
+    3,
+    10,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "2b",
+   "current_shard": 2,
+   "tx_volume": 14,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    2,
+    6,
+    2,
+    4
+   ]
+  },
+  {
+   "prefix": "26",
+   "current_shard": 1,
+   "tx_volume": 28,
+   "cstx_volume": 19,
+   "edges_to_shard": [
+    6,
+    8,
+    7,
+    7
+   ]
+  },
+  {
+   "prefix": "93",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    1,
+    5,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "61",
+   "current_shard": 0,
+   "tx_volume": 12,
+   "cstx_volume": 11,
+   "edges_to_shard": [
+    2,
+    6,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "b1",
+   "current_shard": 2,
+   "tx_volume": 10,
+   "cstx_volume": 8,
+   "edges_to_shard": [
+    0,
+    5,
+    2,
+    3
+   ]
+  },
+  {
+   "prefix": "35",
+   "current_shard": 0,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    6,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "fd",
+   "current_shard": 0,
+   "tx_volume": 21,
+   "cstx_volume": 18,
+   "edges_to_shard": [
+    0,
+    6,
+    5,
+    10
+   ]
+  },
+  {
+   "prefix": "a4",
+   "current_shard": 1,
+   "tx_volume": 112,
+   "cstx_volume": 80,
+   "edges_to_shard": [
+    34,
+    34,
+    22,
+    22
+   ]
+  },
+  {
+   "prefix": "cb",
+   "current_shard": 3,
+   "tx_volume": 12,
+   "cstx_volume": 7,
+   "edges_to_shard": [
+    1,
+    7,
+    2,
+    2
+   ]
+  },
+  {
+   "prefix": "03",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    4
+   ]
+  },
+  {
+   "prefix": "fa",
+   "current_shard": 1,
+   "tx_volume": 11,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    0,
+    8,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "11",
+   "current_shard": 0,
+   "tx_volume": 6,
+   "cstx_volume": 6,
+   "edges_to_shard": [
+    2,
+    3,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "7c",
+   "current_shard": 1,
+   "tx_volume": 8,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    2,
+    3,
+    2,
+    1
+   ]
+  },
+  {
+   "prefix": "b4",
+   "current_shard": 1,
+   "tx_volume": 3,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    1
+   ]
+  }
+ ]
+}

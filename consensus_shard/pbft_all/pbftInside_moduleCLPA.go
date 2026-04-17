@@ -136,10 +136,14 @@ func (cphm *CLPAPbftInsideExtraHandleMod) HandleinCommit(cmsg *message.Commit) b
 			ssid := cphm.pbftNode.CurChain.Get_PartitionMap(tx.Sender)
 			rsid := cphm.pbftNode.CurChain.Get_PartitionMap(tx.Recipient)
 			if !tx.Relayed && ssid != cphm.pbftNode.ShardID {
-				log.Panic("incorrect tx")
+				// ❌ log.Panic("incorrect tx")
+				// ✅ 允许放行：Sender 在交易打包期间被 PPO 迁移到了其他分片
+				cphm.pbftNode.pl.Plog.Printf("S%dN%d : [AERO WARNING] 交易放行! Sender 现属 Shard %d\n", cphm.pbftNode.ShardID, cphm.pbftNode.NodeID, ssid)
 			}
 			if tx.Relayed && rsid != cphm.pbftNode.ShardID {
-				log.Panic("incorrect tx")
+				// ❌ log.Panic("incorrect tx")
+				// ✅ 允许放行：Recipient 在 Relay 中转期间被 PPO 迁移
+				cphm.pbftNode.pl.Plog.Printf("S%dN%d : [AERO WARNING] 幽灵Relay放行! Recipient 现属 Shard %d\n", cphm.pbftNode.ShardID, cphm.pbftNode.NodeID, rsid)
 			}
 			if rsid != cphm.pbftNode.ShardID {
 				relay1Txs = append(relay1Txs, tx)

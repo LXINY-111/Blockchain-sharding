@@ -1,28 +1,12 @@
 {
   "migrations": [
     {
-      "prefix": "fb",
-      "to_shard": 2
+      "prefix": "2a",
+      "to_shard": 3
     },
     {
-      "prefix": "6a",
-      "to_shard": 2
-    },
-    {
-      "prefix": "e1",
-      "to_shard": 2
-    },
-    {
-      "prefix": "26",
-      "to_shard": 0
-    },
-    {
-      "prefix": "f9",
-      "to_shard": 2
-    },
-    {
-      "prefix": "51",
-      "to_shard": 2
+      "prefix": "ea",
+      "to_shard": 1
     }
   ]
 }

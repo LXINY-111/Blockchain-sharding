@@ -130,7 +130,7 @@ func NewPbftNode(shardID, nodeID uint64, pcc *params.ChainConfig, messageHandleT
 
 	p.pl = pbft_log.NewPbftLog(shardID, nodeID)
 
-	p.pl = pbft_log.NewPbftLog(shardID, nodeID)
+	//p.pl = pbft_log.NewPbftLog(shardID, nodeID)
 
 	// 👇👇👇【新增】强制开启 CLPA 模式 👇👇👇
 	if messageHandleType != "CLPA" {

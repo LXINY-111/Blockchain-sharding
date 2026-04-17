@@ -71,16 +71,26 @@ func (p *PbftConsensusNode) Propose() {
 						// 重置计时器，防止连续触发
 						lastStageChangeTime = time.Now().UnixMilli()
 
-						// B. 尝试解锁 (带 recover 保护)
-						func() {
-							defer func() {
-								if r := recover(); r != nil {
-									// 忽略解锁 panic
-								}
-							}()
-							p.sequenceLock.Unlock()
-							fmt.Println("!!! [DEBUG ACTION] 强制释放 sequenceLock 锁成功！")
-						}()
+						if now-lastStageChangeTime > 30000 {
+							fmt.Printf("!!! [DEBUG ACTION] 监测到顽固卡死(Stage=%d, 持续%dms) & 分片信号！执行安全重置...\n", currentStage, now-lastStageChangeTime)
+
+							// A. 重置状态
+							p.pbftStage.Store(1)
+
+							// 重置计时器，防止连续触发
+							lastStageChangeTime = time.Now().UnixMilli()
+
+							// B. 安全解锁 (⭐ 终极修复点 ⭐)
+							// 只有主节点(Leader)在 Propose() 时才加了这把锁。
+							// 从节点绝不能去解锁，否则会触发 Go底层的 fatal error！
+							if p.NodeID == uint64(p.view.Load()) {
+								p.sequenceLock.Unlock()
+								fmt.Println("!!! [DEBUG ACTION] Leader 强制释放 sequenceLock 锁成功！")
+							}
+
+							// C. 唤醒所有卡住的协程
+							p.conditionalVarpbftLock.Broadcast()
+						}
 
 						// C. 唤醒
 						p.conditionalVarpbftLock.Broadcast()

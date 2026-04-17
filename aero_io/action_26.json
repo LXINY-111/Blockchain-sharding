@@ -2,51 +2,11 @@
   "migrations": [
     {
       "prefix": "2a",
-      "to_shard": 2
+      "to_shard": 0
     },
     {
       "prefix": "a4",
-      "to_shard": 2
-    },
-    {
-      "prefix": "91",
-      "to_shard": 2
-    },
-    {
-      "prefix": "32",
-      "to_shard": 2
-    },
-    {
-      "prefix": "68",
-      "to_shard": 2
-    },
-    {
-      "prefix": "b2",
-      "to_shard": 2
-    },
-    {
-      "prefix": "fb",
-      "to_shard": 2
-    },
-    {
-      "prefix": "99",
-      "to_shard": 2
-    },
-    {
-      "prefix": "02",
-      "to_shard": 2
-    },
-    {
-      "prefix": "4c",
-      "to_shard": 2
-    },
-    {
-      "prefix": "13",
-      "to_shard": 2
-    },
-    {
-      "prefix": "1b",
-      "to_shard": 0
+      "to_shard": 3
     }
   ]
 }
