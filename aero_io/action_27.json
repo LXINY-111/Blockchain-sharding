@@ -1,6 +1,10 @@
 {
   "migrations": [
     {
+      "prefix": "2a",
+      "to_shard": 3
+    },
+    {
       "prefix": "6c",
       "to_shard": 2
     }

@@ -1,0 +1,17 @@
+{
+ "epoch": 78,
+ "shard_loads": [
+  114,
+  0,
+  0,
+  0
+ ],
+ "shard_cstx_ratios": [
+  0,
+  0,
+  0,
+  0
+ ],
+ "global_cstx_ratio": 0,
+ "candidate_prefixes": []
+}

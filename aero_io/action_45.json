@@ -3,10 +3,6 @@
     {
       "prefix": "b2",
       "to_shard": 2
-    },
-    {
-      "prefix": "99",
-      "to_shard": 0
     }
   ]
 }

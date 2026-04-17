@@ -1,7 +1,7 @@
 {
   "migrations": [
     {
-      "prefix": "ea",
+      "prefix": "9e",
       "to_shard": 3
     }
   ]

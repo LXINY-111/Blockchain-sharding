@@ -3,6 +3,10 @@
     {
       "prefix": "e7",
       "to_shard": 0
+    },
+    {
+      "prefix": "ea",
+      "to_shard": 3
     }
   ]
 }

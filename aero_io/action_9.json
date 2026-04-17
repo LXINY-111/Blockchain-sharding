@@ -2,11 +2,11 @@
   "migrations": [
     {
       "prefix": "e7",
-      "to_shard": 2
+      "to_shard": 3
     },
     {
-      "prefix": "32",
-      "to_shard": 0
+      "prefix": "ea",
+      "to_shard": 2
     }
   ]
 }

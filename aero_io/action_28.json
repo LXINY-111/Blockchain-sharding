@@ -3,6 +3,10 @@
     {
       "prefix": "32",
       "to_shard": 1
+    },
+    {
+      "prefix": "2a",
+      "to_shard": 0
     }
   ]
 }

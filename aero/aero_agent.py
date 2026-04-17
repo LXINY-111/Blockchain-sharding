@@ -96,6 +96,9 @@ def update_ppo(model, optimizer, memory):
     print(f"🚀 [AERO PPO TRAIN] 神经网络完成了一次进化! 当前 Loss: {loss.mean().item():.4f}")
 
 def main():
+    #加一个总开关，是否用图的边中最大的数
+    USE_HEURISTIC_BASELINE = False
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--epoch", type=int, required=True)
     args = parser.parse_args()
@@ -208,6 +211,8 @@ def main():
         total_edges = sum(raw_edges)
         # 归一化：转换为去往各个分片的概率分布，如果没有边则全是0
         edges_distribution = [e / total_edges for e in raw_edges] if total_edges > 0 else [0.0]*num_shards
+        # heuristic baseline：边最多的 shard 作为“最佳目标”
+        best_shard = int(np.argmax(raw_edges)) if sum(raw_edges) > 0 else prefix_data['current_shard']
         
         # ✨ 将图特征 edges_distribution 拼接到输入向量中
         input_vec = global_state + current_shard_onehot + tx_vol_norm + edges_distribution
@@ -220,7 +225,28 @@ def main():
             action = dist.sample()
             logprob = dist.log_prob(action)
         
-        target_shard = action.item()
+        #target_shard = action.item()
+        rl_target_shard = action.item()
+        # True = 用 heuristic 直接接管动作
+        # False = 仍然用 MLP 动作，只把 heuristic 当对照
+        target_shard = best_shard if USE_HEURISTIC_BASELINE else rl_target_shard
+        # 动作正确性诊断
+        is_correct = (target_shard == best_shard)
+        print(
+            f"[AERO CHECK] prefix={prefix_data['prefix']} "
+            f"cur={prefix_data['current_shard']} "
+            f"choose={target_shard} "
+            f"best={best_shard} "
+            f"edges={raw_edges} "
+            f"{'✅' if is_correct else '❌'}"
+        )
+
+        chosen_gain = raw_edges[target_shard] if target_shard < len(raw_edges) else -1
+        best_gain = raw_edges[best_shard] if best_shard < len(raw_edges) else -1
+        print(
+            f"[AERO GAIN] prefix={prefix_data['prefix']} "
+            f"chosen_gain={chosen_gain} best_gain={best_gain}"
+        )
 
         # 🌟 记录动作到经验池（等下个 Epoch 再发工资）
         memory['states'].append(state_tensor)
