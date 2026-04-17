@@ -32,10 +32,10 @@ df_grouped = df.groupby(col_epoch)[[col_total, col_normal]].sum().reset_index()
 df_grouped = df_grouped.sort_values(by=col_epoch)
 
 # 计算跨片率
-df_grouped['CSTX_Ratio'] = ((df_grouped[col_total] - df_grouped[col_normal]) / df_grouped[col_total]) * 100
+df_grouped['Global_CSTX_Ratio'] = ((df_grouped[col_total] - df_grouped[col_normal]) / df_grouped[col_total]) * 100
 
 epochs = df_grouped[col_epoch].values
-cstx_ratios = df_grouped['CSTX_Ratio'].values
+cstx_ratios = df_grouped['Global_CSTX_Ratio'].values
 total_txs = df_grouped[col_total].values
 
 # 4. 开始画图

@@ -37,8 +37,8 @@ def load_model(state_dim, action_dim):
     return model, optimizer
 
 # 计算奖励，增加 norm_loads 参数
-def compute_reward(cstx_ratios, norm_loads):
-    avg_cstx = sum(cstx_ratios) / len(cstx_ratios) if cstx_ratios else 0.75
+def compute_reward(global_cstx_ratio, norm_loads):
+    global_cstx = global_cstx_ratio if global_cstx_ratio is not None else 0.75
     # 🌟 修复 1：计算真实的“全局负载占比” (每个分片占全网总交易的比例)
     sum_nl = sum(norm_loads) + 1e-5
     load_proportions = [nl / sum_nl for nl in norm_loads]
@@ -52,11 +52,13 @@ def compute_reward(cstx_ratios, norm_loads):
     # 并将跨片率的惩罚激增至 -50.0！
     # 逼迫 AI 在“不触发死亡红线”的前提下，拼命去降低跨片率。
     # =========================================================
-    reward = -50.0 * avg_cstx - 10.0 * load_variance
+    reward = -50.0 * global_cstx - 10.0 * load_variance
 
     # 🌟 修复 2：用真实的占比去触发 40% 的“死亡惩罚”红线
     if len(load_proportions) > 0 and max(load_proportions) > 0.4:
-        reward -= 50.0  
+        #加一个更平滑的轻惩罚
+        reward -= 5.0 * max(load_proportions)
+        #reward -= 50.0  
         print(f"[AERO PENALTY] 🚨 触发死亡惩罚！当前最大负载占比已超标: {max(load_proportions):.2f}")
         
     # 🌟 修复 3：绝对不能漏了 return！！否则 PPO 拿不到奖励会直接闪退！
@@ -158,9 +160,14 @@ def main():
 
     # 🌟 2. 结算上一轮的 Reward (延迟反馈)
     # 当前拿到的 state 其实是上一轮 action 执行后的结果
+    global_cstx_ratio = data.get("global_cstx_ratio", None)
     unrewarded_count = len(memory['states']) - len(memory['rewards'])
+    #在 reward 结算前打印
+    avg_shard_cstx = sum(cstx_ratios) / len(cstx_ratios) if cstx_ratios else 0.0
+    print(f"[AERO REWARD] global_cstx={float(global_cstx_ratio or 0.0):.4f}, avg_shard_cstx={avg_shard_cstx:.4f}, loads={norm_loads}")
+
     if unrewarded_count > 0:
-        step_reward = compute_reward(cstx_ratios,norm_loads)
+        step_reward = compute_reward(global_cstx_ratio,norm_loads)
         memory['rewards'].extend([step_reward] * unrewarded_count)
         print(f"[AERO PPO] 结算 Epoch {args.epoch-1} 的行动得分: Reward = {step_reward:.4f}")
 

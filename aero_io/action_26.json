@@ -1,11 +1,11 @@
 {
   "migrations": [
     {
-      "prefix": "2a",
-      "to_shard": 0
+      "prefix": "ea",
+      "to_shard": 2
     },
     {
-      "prefix": "a4",
+      "prefix": "91",
       "to_shard": 3
     }
   ]

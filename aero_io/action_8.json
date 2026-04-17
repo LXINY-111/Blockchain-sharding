@@ -1,15 +1,15 @@
 {
   "migrations": [
     {
-      "prefix": "d3",
+      "prefix": "2a",
       "to_shard": 0
     },
     {
-      "prefix": "52",
-      "to_shard": 0
+      "prefix": "e7",
+      "to_shard": 3
     },
     {
-      "prefix": "ea",
+      "prefix": "32",
       "to_shard": 2
     }
   ]

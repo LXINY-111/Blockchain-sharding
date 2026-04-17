@@ -2,10 +2,14 @@
   "migrations": [
     {
       "prefix": "ea",
-      "to_shard": 1
+      "to_shard": 2
     },
     {
       "prefix": "32",
+      "to_shard": 2
+    },
+    {
+      "prefix": "b2",
       "to_shard": 3
     }
   ]

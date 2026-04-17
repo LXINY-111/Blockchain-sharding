@@ -193,8 +193,8 @@ func (ccm *CLPACommitteeModule) MsgSendingControl() {
 			// ==========================================
 			// 🛑 新增：安全刹车机制，防止 Windows 端口耗尽
 			// ==========================================
-			if clpaCnt >= 1000 {
-				ccm.sl.Slog.Println(">>> [Safe Stop] 已达到 100 Epoch，PPO 已充分收敛！准备安全退出并生成 CSV 数据...")
+			if clpaCnt >= 50 {
+				ccm.sl.Slog.Println(">>> [Safe Stop] 已达到 50 Epoch，PPO 已充分收敛！准备安全退出并生成 CSV 数据...")
 				return // 直接退出 MsgSendingControl 函数，触发上层生成 csv 并平滑关闭
 			}
 			// ==========================================

@@ -15,6 +15,7 @@ type AEROStatePayload struct {
 	Epoch             int          `json:"epoch"`
 	ShardLoads        []int        `json:"shard_loads"`        // 分片负载
 	ShardCSTXRatios   []float64    `json:"shard_cstx_ratios"`  // 分片跨分片交易比例
+	GlobalCSTXRatio   float64      `json:"global_cstx_ratio"`  // 新增
 	CandidatePrefixes []PrefixStat `json:"candidate_prefixes"` // 候选迁移前缀
 }
 
@@ -49,9 +50,6 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 		ShardCSTXRatios:   make([]float64, cs.ShardNum),
 		CandidatePrefixes: make([]PrefixStat, 0),
 	}
-
-	// 1.1 填充负载 (使用节点数近似)
-	copy(payload.ShardLoads, cs.VertexsNumInShard)
 
 	// 1.3 核心：按前缀聚合统计
 	// 假设前缀长度为2 (对应以太坊地址前几位，如 "0x1a")
@@ -101,6 +99,11 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 		shardCSTx[stat.CurrentShard] += stat.CSTXVolume
 	}
 
+	// 1.1 填充负载 (使用交易量，而不是顶点数)
+	for i := 0; i < cs.ShardNum; i++ {
+		payload.ShardLoads[i] = shardTotalTx[i]
+	}
+
 	// 计算每个分片的真实跨片率
 	for i := 0; i < cs.ShardNum; i++ {
 		if shardTotalTx[i] > 0 {
@@ -126,11 +129,13 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 	if totalTX > 0 {
 		currentRatio = float64(totalCSTX) / float64(totalTX)
 	}
+	payload.GlobalCSTXRatio = currentRatio
 
 	// 核心创新点：全阶段阈值触发微迁移
 	//triggerThreshold := 0.62 // 设定阈值，你可以根据基线调整为 0.60 或 0.62
 
-	fmt.Printf(">>> [AERO-Micro] 🚨 触发警报！监控点 %d: 跨片率飙升至 %.2f%%！立即唤醒 PPO 智能体进行微迁移！\n", epoch, currentRatio*100)
+	//fmt.Printf(">>> [AERO-Micro] 🚨 触发警报！监控点 %d: 跨片率飙升至 %.2f%%！立即唤醒 PPO 智能体进行微迁移！\n", epoch, currentRatio*100)
+	fmt.Printf(">>> [AERO-Micro] 监控点 %d: 当前全局跨片率 %.2f%%\n", epoch, currentRatio*100)
 	// =========================================================
 	// ✨✨✨ 插入部分结束 ✨✨✨
 	// =========================================================
@@ -162,6 +167,10 @@ func (cs *CLPAState) AERO_Partition(epoch int) map[string]uint64 {
 
 	// 2. 导出 JSON 并调用 Python
 	_ = os.Mkdir("aero_io", 0755)
+
+	// 🔍 在写 state json 前打印
+	fmt.Printf("[AERO STATE] epoch=%d global=%.4f shard=%v loads=%v\n", epoch, payload.GlobalCSTXRatio, payload.ShardCSTXRatios, payload.ShardLoads)
+
 	jsonBytes, _ := json.MarshalIndent(payload, "", " ")
 	_ = ioutil.WriteFile(fmt.Sprintf("aero_io/state_%d.json", epoch), jsonBytes, 0644)
 
