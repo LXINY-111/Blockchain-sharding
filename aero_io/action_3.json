@@ -10,6 +10,14 @@
     },
     {
       "prefix": "2a",
+      "to_shard": 0
+    },
+    {
+      "prefix": "ea",
+      "to_shard": 0
+    },
+    {
+      "prefix": "6e",
       "to_shard": 3
     }
   ]

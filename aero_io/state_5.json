@@ -1,34 +1,118 @@
 {
  "epoch": 5,
  "shard_loads": [
-  40,
-  31,
-  30,
-  71
+  55,
+  37,
+  47,
+  79
  ],
  "shard_cstx_ratios": [
-  0.75,
-  0.9354838709677419,
-  0.8,
-  0.7746478873239436
+  0.7454545454545455,
+  0.7567567567567568,
+  0.7021276595744681,
+  0.6329113924050633
  ],
- "global_cstx_ratio": 0.8023255813953488,
+ "global_cstx_ratio": 0.6972477064220184,
  "candidate_prefixes": [
   {
-   "prefix": "27",
-   "current_shard": 0,
+   "prefix": "94",
+   "current_shard": 3,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "1c",
+   "current_shard": 2,
    "tx_volume": 2,
    "cstx_volume": 2,
    "edges_to_shard": [
     0,
+    1,
     0,
-    0,
-    2
+    1
    ]
   },
   {
-   "prefix": "9b",
-   "current_shard": 3,
+   "prefix": "ec",
+   "current_shard": 2,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "32",
+   "current_shard": 0,
+   "tx_volume": 14,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    2,
+    2,
+    6,
+    4
+   ]
+  },
+  {
+   "prefix": "55",
+   "current_shard": 1,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "f9",
+   "current_shard": 1,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "91",
+   "current_shard": 2,
+   "tx_volume": 7,
+   "cstx_volume": 5,
+   "edges_to_shard": [
+    2,
+    1,
+    1,
+    3
+   ]
+  },
+  {
+   "prefix": "9e",
+   "current_shard": 2,
+   "tx_volume": 5,
+   "cstx_volume": 4,
+   "edges_to_shard": [
+    3,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "1a",
+   "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
@@ -40,19 +124,19 @@
   },
   {
    "prefix": "cb",
-   "current_shard": 3,
-   "tx_volume": 3,
-   "cstx_volume": 3,
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 2,
    "edges_to_shard": [
     0,
     0,
-    3,
+    2,
     0
    ]
   },
   {
-   "prefix": "fb",
-   "current_shard": 0,
+   "prefix": "d4",
+   "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
@@ -63,19 +147,7 @@
    ]
   },
   {
-   "prefix": "a8",
-   "current_shard": 3,
-   "tx_volume": 4,
-   "cstx_volume": 4,
-   "edges_to_shard": [
-    0,
-    1,
-    0,
-    3
-   ]
-  },
-  {
-   "prefix": "52",
+   "prefix": "7a",
    "current_shard": 3,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -87,68 +159,44 @@
    ]
   },
   {
-   "prefix": "2a",
+   "prefix": "7e",
+   "current_shard": 1,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "be",
+   "current_shard": 1,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "93",
    "current_shard": 3,
    "tx_volume": 2,
    "cstx_volume": 2,
    "edges_to_shard": [
     1,
-    1,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "ff",
-   "current_shard": 1,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "7d",
-   "current_shard": 1,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
     0,
     1,
     0
    ]
   },
   {
-   "prefix": "16",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    1,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "91",
-   "current_shard": 1,
-   "tx_volume": 4,
-   "cstx_volume": 4,
-   "edges_to_shard": [
-    2,
-    0,
-    0,
-    2
-   ]
-  },
-  {
-   "prefix": "e5",
-   "current_shard": 1,
+   "prefix": "3f",
+   "current_shard": 0,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
@@ -171,15 +219,363 @@
    ]
   },
   {
-   "prefix": "82",
+   "prefix": "fe",
    "current_shard": 2,
-   "tx_volume": 3,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "10",
+   "current_shard": 3,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "bb",
+   "current_shard": 3,
+   "tx_volume": 2,
    "cstx_volume": 2,
    "edges_to_shard": [
+    0,
     2,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "1e",
+   "current_shard": 2,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "dc",
+   "current_shard": 1,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
     0,
     1,
     0
+   ]
+  },
+  {
+   "prefix": "3a",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "75",
+   "current_shard": 3,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    0,
+    2,
+    0
+   ]
+  },
+  {
+   "prefix": "31",
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "34",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "e0",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "ae",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "ea",
+   "current_shard": 3,
+   "tx_volume": 20,
+   "cstx_volume": 12,
+   "edges_to_shard": [
+    3,
+    6,
+    3,
+    8
+   ]
+  },
+  {
+   "prefix": "a0",
+   "current_shard": 3,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "8e",
+   "current_shard": 1,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "e7",
+   "current_shard": 2,
+   "tx_volume": 3,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    2,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "a8",
+   "current_shard": 3,
+   "tx_volume": 3,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "9b",
+   "current_shard": 3,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "36",
+   "current_shard": 1,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "8a",
+   "current_shard": 3,
+   "tx_volume": 3,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "prefix": "6a",
+   "current_shard": 3,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "06",
+   "current_shard": 3,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "45",
+   "current_shard": 3,
+   "tx_volume": 3,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    3
+   ]
+  },
+  {
+   "prefix": "7b",
+   "current_shard": 2,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "27",
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    2
+   ]
+  },
+  {
+   "prefix": "8c",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "71",
+   "current_shard": 1,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "b8",
+   "current_shard": 3,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "00",
+   "current_shard": 0,
+   "tx_volume": 3,
+   "cstx_volume": 3,
+   "edges_to_shard": [
+    0,
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "prefix": "38",
+   "current_shard": 1,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "prefix": "99",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
    ]
   },
   {
@@ -195,7 +591,79 @@
    ]
   },
   {
-   "prefix": "71",
+   "prefix": "65",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "5e",
+   "current_shard": 2,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "dd",
+   "current_shard": 1,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    2,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "2a",
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "8b",
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    0,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "11",
+   "current_shard": 1,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "79",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -219,67 +687,19 @@
    ]
   },
   {
-   "prefix": "e2",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    1,
-    0
-   ]
-  },
-  {
-   "prefix": "4b",
-   "current_shard": 0,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    0,
-    1,
-    1,
-    0
-   ]
-  },
-  {
-   "prefix": "6d",
+   "prefix": "b1",
    "current_shard": 2,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
     0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "26",
-   "current_shard": 0,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
     1,
     0,
-    0,
-    1
+    0
    ]
   },
   {
-   "prefix": "e7",
-   "current_shard": 0,
-   "tx_volume": 3,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    2,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "55",
+   "prefix": "17",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -291,7 +711,7 @@
    ]
   },
   {
-   "prefix": "1b",
+   "prefix": "ff",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -300,18 +720,6 @@
     0,
     0,
     1
-   ]
-  },
-  {
-   "prefix": "0f",
-   "current_shard": 1,
-   "tx_volume": 3,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    2,
-    0,
-    1,
-    0
    ]
   },
   {
@@ -320,55 +728,7 @@
    "tx_volume": 2,
    "cstx_volume": 2,
    "edges_to_shard": [
-    0,
-    0,
-    0,
-    2
-   ]
-  },
-  {
-   "prefix": "be",
-   "current_shard": 1,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "0c",
-   "current_shard": 0,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    0,
     1,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "ae",
-   "current_shard": 2,
-   "tx_volume": 2,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    1,
-    1
-   ]
-  },
-  {
-   "prefix": "e0",
-   "current_shard": 0,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
     0,
     0,
     1
@@ -387,91 +747,67 @@
    ]
   },
   {
-   "prefix": "4c",
+   "prefix": "c7",
    "current_shard": 0,
    "tx_volume": 2,
    "cstx_volume": 1,
    "edges_to_shard": [
-    1,
+    0,
     0,
     1,
+    1
+   ]
+  },
+  {
+   "prefix": "15",
+   "current_shard": 0,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    1,
+    1,
+    0,
     0
    ]
   },
   {
-   "prefix": "dc",
+   "prefix": "08",
+   "current_shard": 0,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "3e",
+   "current_shard": 1,
+   "tx_volume": 2,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "e5",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
     0,
     0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "ea",
-   "current_shard": 3,
-   "tx_volume": 15,
-   "cstx_volume": 12,
-   "edges_to_shard": [
-    3,
-    6,
-    3,
-    3
-   ]
-  },
-  {
-   "prefix": "f6",
-   "current_shard": 3,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    2,
-    0,
-    0,
+    1,
     0
    ]
   },
   {
-   "prefix": "65",
-   "current_shard": 0,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "32",
-   "current_shard": 2,
-   "tx_volume": 9,
-   "cstx_volume": 7,
-   "edges_to_shard": [
-    2,
-    2,
-    2,
-    3
-   ]
-  },
-  {
-   "prefix": "8b",
-   "current_shard": 3,
-   "tx_volume": 4,
-   "cstx_volume": 4,
-   "edges_to_shard": [
-    0,
-    2,
-    2,
-    0
-   ]
-  },
-  {
-   "prefix": "dd",
+   "prefix": "7d",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -495,91 +831,19 @@
    ]
   },
   {
-   "prefix": "93",
-   "current_shard": 1,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    1,
-    0,
-    1,
-    0
-   ]
-  },
-  {
-   "prefix": "36",
-   "current_shard": 3,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    0,
-    1,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "2e",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    1,
-    0
-   ]
-  },
-  {
-   "prefix": "25",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    1,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "75",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    1,
-    0
-   ]
-  },
-  {
-   "prefix": "fe",
+   "prefix": "0d",
    "current_shard": 2,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    0,
-    1,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "15",
-   "current_shard": 0,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
-    0,
     1,
+    0,
     0,
     0
    ]
   },
   {
-   "prefix": "79",
+   "prefix": "1b",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -591,49 +855,25 @@
    ]
   },
   {
-   "prefix": "b1",
-   "current_shard": 2,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    1,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "31",
-   "current_shard": 0,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    1,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "c7",
-   "current_shard": 0,
+   "prefix": "f6",
+   "current_shard": 3,
    "tx_volume": 2,
-   "cstx_volume": 1,
+   "cstx_volume": 2,
    "edges_to_shard": [
+    2,
     0,
     0,
-    0,
-    2
+    0
    ]
   },
   {
-   "prefix": "5e",
+   "prefix": "05",
    "current_shard": 2,
-   "tx_volume": 1,
-   "cstx_volume": 1,
+   "tx_volume": 3,
+   "cstx_volume": 3,
    "edges_to_shard": [
+    2,
     1,
-    0,
     0,
     0
    ]
@@ -651,19 +891,31 @@
    ]
   },
   {
-   "prefix": "9f",
+   "prefix": "4b",
+   "current_shard": 0,
+   "tx_volume": 3,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    2,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "prefix": "cf",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
-    1,
     0,
     0,
-    0
+    0,
+    1
    ]
   },
   {
-   "prefix": "34",
+   "prefix": "fb",
    "current_shard": 0,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -675,7 +927,7 @@
    ]
   },
   {
-   "prefix": "06",
+   "prefix": "db",
    "current_shard": 3,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -687,39 +939,15 @@
    ]
   },
   {
-   "prefix": "3a",
-   "current_shard": 0,
+   "prefix": "2e",
+   "current_shard": 3,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
     0,
-    1,
     0,
+    1,
     0
-   ]
-  },
-  {
-   "prefix": "00",
-   "current_shard": 0,
-   "tx_volume": 3,
-   "cstx_volume": 3,
-   "edges_to_shard": [
-    0,
-    0,
-    1,
-    2
-   ]
-  },
-  {
-   "prefix": "f9",
-   "current_shard": 1,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
    ]
   },
   {
@@ -735,19 +963,7 @@
    ]
   },
   {
-   "prefix": "b8",
-   "current_shard": 1,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "17",
+   "prefix": "9f",
    "current_shard": 1,
    "tx_volume": 1,
    "cstx_volume": 1,
@@ -756,30 +972,6 @@
     0,
     0,
     0
-   ]
-  },
-  {
-   "prefix": "10",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    1,
-    0,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "99",
-   "current_shard": 0,
-   "tx_volume": 2,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    1,
-    1
    ]
   },
   {
@@ -795,122 +987,38 @@
    ]
   },
   {
-   "prefix": "8c",
-   "current_shard": 0,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "05",
-   "current_shard": 2,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    1,
-    0,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "11",
-   "current_shard": 1,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "b0",
-   "current_shard": 3,
-   "tx_volume": 2,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    1,
-    1
-   ]
-  },
-  {
-   "prefix": "ec",
+   "prefix": "26",
    "current_shard": 3,
    "tx_volume": 2,
    "cstx_volume": 2,
    "edges_to_shard": [
-    0,
     1,
     0,
+    0,
     1
+   ]
+  },
+  {
+   "prefix": "16",
+   "current_shard": 3,
+   "tx_volume": 2,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    1,
+    1,
+    0,
+    0
    ]
   },
   {
    "prefix": "7c",
    "current_shard": 3,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    1,
-    0,
-    1,
-    0
-   ]
-  },
-  {
-   "prefix": "8a",
-   "current_shard": 0,
    "tx_volume": 3,
-   "cstx_volume": 1,
+   "cstx_volume": 3,
    "edges_to_shard": [
-    1,
-    0,
-    0,
-    2
-   ]
-  },
-  {
-   "prefix": "9e",
-   "current_shard": 3,
-   "tx_volume": 5,
-   "cstx_volume": 5,
-   "edges_to_shard": [
-    3,
-    1,
-    1,
-    0
-   ]
-  },
-  {
-   "prefix": "c3",
-   "current_shard": 3,
-   "tx_volume": 2,
-   "cstx_volume": 2,
-   "edges_to_shard": [
-    1,
-    1,
-    0,
-    0
-   ]
-  },
-  {
-   "prefix": "bb",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
+    2,
     0,
     1,
-    0,
     0
    ]
   },
@@ -939,104 +1047,92 @@
    ]
   },
   {
-   "prefix": "38",
-   "current_shard": 1,
+   "prefix": "52",
+   "current_shard": 3,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [
     0,
-    0,
     1,
+    0,
     0
    ]
   },
   {
-   "prefix": "08",
-   "current_shard": 0,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "6a",
+   "prefix": "c3",
    "current_shard": 3,
    "tx_volume": 2,
    "cstx_volume": 2,
    "edges_to_shard": [
-    0,
     2,
+    0,
     0,
     0
    ]
   },
   {
-   "prefix": "1a",
+   "prefix": "0f",
    "current_shard": 1,
-   "tx_volume": 1,
+   "tx_volume": 2,
    "cstx_volume": 1,
    "edges_to_shard": [
+    2,
     0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "82",
+   "current_shard": 2,
+   "tx_volume": 3,
+   "cstx_volume": 2,
+   "edges_to_shard": [
+    2,
     0,
     1,
     0
    ]
   },
   {
-   "prefix": "1c",
+   "prefix": "02",
+   "current_shard": 3,
+   "tx_volume": 1,
+   "cstx_volume": 1,
+   "edges_to_shard": [
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "prefix": "59",
    "current_shard": 2,
    "tx_volume": 2,
    "cstx_volume": 2,
    "edges_to_shard": [
-    0,
-    1,
-    0,
-    1
-   ]
-  },
-  {
-   "prefix": "67",
-   "current_shard": 3,
-   "tx_volume": 1,
-   "cstx_volume": 1,
-   "edges_to_shard": [
+    2,
     0,
     0,
-    1,
     0
    ]
   },
   {
-   "prefix": "8e",
+   "prefix": "25",
    "current_shard": 3,
    "tx_volume": 2,
    "cstx_volume": 1,
    "edges_to_shard": [
     0,
-    0,
-    0,
-    2
-   ]
-  },
-  {
-   "prefix": "d4",
-   "current_shard": 1,
-   "tx_volume": 2,
-   "cstx_volume": 1,
-   "edges_to_shard": [
-    0,
-    0,
     1,
+    0,
     1
    ]
   },
   {
-   "prefix": "3f",
-   "current_shard": 0,
+   "prefix": "ee",
+   "current_shard": 3,
    "tx_volume": 1,
    "cstx_volume": 1,
    "edges_to_shard": [

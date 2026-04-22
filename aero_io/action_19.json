@@ -6,6 +6,18 @@
     },
     {
       "prefix": "ea",
+      "to_shard": 0
+    },
+    {
+      "prefix": "32",
+      "to_shard": 2
+    },
+    {
+      "prefix": "e3",
+      "to_shard": 0
+    },
+    {
+      "prefix": "d3",
       "to_shard": 2
     }
   ]

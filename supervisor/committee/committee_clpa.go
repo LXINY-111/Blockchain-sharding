@@ -27,12 +27,17 @@ type CLPACommitteeModule struct {
 	batchDataNum int
 
 	// additional variants
+	// curEpoch 表示“已经被所有 shard 确认完成”的最新 epoch
 	curEpoch            int32
 	clpaLock            sync.Mutex
 	clpaGraph           *partition.CLPAState
 	modifiedMap         map[string]uint64
 	clpaLastRunningTime time.Time
 	clpaFreq            int
+
+	// ===== 新增：按 epoch 统计 shard 回包，防止任何一个 shard 抢跑推进 curEpoch =====
+	epochAckLock   sync.Mutex
+	epochShardAcks map[int32]map[uint64]struct{}
 
 	// logger module
 	sl *supervisor_log.SupervisorLog
@@ -58,6 +63,9 @@ func NewCLPACommitteeModule(Ip_nodeTable map[uint64]map[uint64]string, Ss *signa
 		Ss:                  Ss,
 		sl:                  sl,
 		curEpoch:            0,
+
+		// 新增：初始化 epoch -> shardAckSet
+		epochShardAcks: make(map[int32]map[uint64]struct{}),
 	}
 }
 
@@ -184,17 +192,20 @@ func (ccm *CLPACommitteeModule) MsgSendingControl() {
 			ccm.clpaLock.Unlock()
 
 			// 阻塞等待所有分片同步状态
-			for atomic.LoadInt32(&ccm.curEpoch) != int32(clpaCnt) {
-				time.Sleep(time.Second)
+			// 用 < 更稳：只要 curEpoch 已经推进到当前目标 epoch 或更高，就允许继续。
+			// 正常情况下修完 ack 逻辑后它不会跳跃，但这里留一道保险。
+			for atomic.LoadInt32(&ccm.curEpoch) < int32(clpaCnt) {
+				time.Sleep(200 * time.Millisecond)
 			}
+
 			ccm.clpaLastRunningTime = time.Now()
 			ccm.sl.Slog.Printf("!!! [AERO Loop] Next CLPA epoch %d begins. Total Tx Sent: %d !!!\n", clpaCnt, globalSendCount)
 
 			// ==========================================
 			// 🛑 新增：安全刹车机制，防止 Windows 端口耗尽
 			// ==========================================
-			if clpaCnt >= 150 {
-				ccm.sl.Slog.Println(">>> [Safe Stop] 已达到 150 Epoch，PPO 已充分收敛！准备安全退出并生成 CSV 数据...")
+			if clpaCnt >= 200 {
+				ccm.sl.Slog.Println(">>> [Safe Stop] 已达到 200 Epoch，PPO 已充分收敛！准备安全退出并生成 CSV 数据...")
 				return // 直接退出 MsgSendingControl 函数，触发上层生成 csv 并平滑关闭
 			}
 			// ==========================================
@@ -248,20 +259,89 @@ func (ccm *CLPACommitteeModule) clpaReset() {
 	}
 }
 
+// recordEpochAck：按 epoch 统计“哪些 shard 已经上报完成”
+// 只有当某个 epoch 收齐全部 shard 的确认后，才允许推进 curEpoch。
+// 这能彻底避免“某一个 shard 抢先上报 epoch=N，就把 curEpoch 从 N-1 提前推进到 N”的问题。
+func (ccm *CLPACommitteeModule) recordEpochAck(shardID uint64, epoch int32) {
+	ccm.epochAckLock.Lock()
+	defer ccm.epochAckLock.Unlock()
+
+	stableEpoch := atomic.LoadInt32(&ccm.curEpoch)
+
+	// 旧消息直接忽略
+	if epoch <= stableEpoch {
+		return
+	}
+
+	// 为该 epoch 建立 shard 确认集合
+	if _, ok := ccm.epochShardAcks[epoch]; !ok {
+		ccm.epochShardAcks[epoch] = make(map[uint64]struct{})
+	}
+
+	// 记录当前 shard 已确认
+	ccm.epochShardAcks[epoch][shardID] = struct{}{}
+
+	ccm.sl.Slog.Printf(
+		"[EPOCH ACK] recv shard=%d epoch=%d stableEpoch=%d ackCount=%d/%d\n",
+		shardID,
+		epoch,
+		stableEpoch,
+		len(ccm.epochShardAcks[epoch]),
+		params.ShardNum,
+	)
+
+	// 只能按顺序推进：stableEpoch+1、stableEpoch+2 ...
+	expected := stableEpoch + 1
+	for {
+		ackSet, ok := ccm.epochShardAcks[expected]
+		if !ok {
+			break
+		}
+		if len(ackSet) < params.ShardNum {
+			break
+		}
+
+		atomic.StoreInt32(&ccm.curEpoch, expected)
+		ccm.sl.Slog.Printf(
+			"[EPOCH ADVANCE] curEpoch -> %d, ackCount=%d/%d\n",
+			expected,
+			len(ackSet),
+			params.ShardNum,
+		)
+
+		// 清理已经完成的 epoch 桶，防止 map 一直长大
+		delete(ccm.epochShardAcks, expected)
+
+		expected++
+	}
+}
+
 func (ccm *CLPACommitteeModule) HandleBlockInfo(b *message.BlockInfoMsg) {
 	ccm.sl.Slog.Printf("Supervisor: received from shard %d in epoch %d.\n", b.SenderShardID, b.Epoch)
-	if atomic.CompareAndSwapInt32(&ccm.curEpoch, int32(b.Epoch-1), int32(b.Epoch)) {
-		ccm.sl.Slog.Println("this curEpoch is updated", b.Epoch)
-	}
+
+	// ===== 核心修复 =====
+	// 不能再让“任意一个 shard 的首条消息”直接推进 curEpoch
+	// 必须按 epoch 收齐全部 shard 的确认后，才推进
+	ccm.recordEpochAck(b.SenderShardID, int32(b.Epoch))
+
+	// 没有区块体内容就直接返回
 	if b.BlockBodyLength == 0 {
 		return
 	}
+
 	ccm.clpaLock.Lock()
+	defer ccm.clpaLock.Unlock()
+
 	for _, tx := range b.InnerShardTxs {
-		ccm.clpaGraph.AddEdge(partition.Vertex{Addr: tx.Sender}, partition.Vertex{Addr: tx.Recipient})
+		ccm.clpaGraph.AddEdge(
+			partition.Vertex{Addr: tx.Sender},
+			partition.Vertex{Addr: tx.Recipient},
+		)
 	}
 	for _, r2tx := range b.Relay2Txs {
-		ccm.clpaGraph.AddEdge(partition.Vertex{Addr: r2tx.Sender}, partition.Vertex{Addr: r2tx.Recipient})
+		ccm.clpaGraph.AddEdge(
+			partition.Vertex{Addr: r2tx.Sender},
+			partition.Vertex{Addr: r2tx.Recipient},
+		)
 	}
-	ccm.clpaLock.Unlock()
 }
